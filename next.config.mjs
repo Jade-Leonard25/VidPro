@@ -1,17 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+    // 1. Mandatory setting for static export (used by GitHub Pages)
+    output: 'export',
 
-    // 1. Necessary for static export
-    output:'export',
+    // 2. CRITICAL: Sets the base path to match the repository name
+    // Replace 'VidPro' with your repository name if it's different.
+    basePath: '/VidPro',
 
-    // 2. CRITICAL FIX: Base path must match your repository name exactly.
-    //    Example: If your repo is named 'my-portfolio', use '/my-portfolio'.
-    basePath: 'VidPro',
-
-    // 3. Recommended: Disable image optimization for static export compatibility.
+    // 3. Mandatory to prevent image loading errors with 'output: export'
     images: {
         unoptimized: true,
-    }
+    },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
