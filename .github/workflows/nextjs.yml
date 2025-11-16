@@ -33,7 +33,7 @@ jobs:
         run: npm run build
 
       - name: Export static site
-        run: npm next export
+        run: npx next export
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
